@@ -17,7 +17,36 @@ class _TemplateState extends State<Template> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.only(top: 150.0),
+          child: GridView.count(
+            padding: EdgeInsets.all(20.0),
+            crossAxisCount: 2,
+            mainAxisSpacing: 10.0,
+            crossAxisSpacing: 10.0,
+            children: <Widget>[
+              GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
+                debugPrint("tapped");
+              },),
+              GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
+                debugPrint("tapped");
+              },),
+              GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
+                debugPrint("tapped");
+              },),
+              GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
+                debugPrint("tapped");
+              },),
+              GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
+                debugPrint("tapped");
+              },),
+              GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
+                debugPrint("tapped");
+              },),
+            ],
 
+          ),
+        ),
       ),
     );
 }
