@@ -7,5 +7,7 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
 
-void main() => runApp(new Template()); //either myHomePage for image picker frontend or Template for template chooser.
+void main() => runApp(MaterialApp(
+  home: Template(),
+)); //either myHomePage for image picker frontend or Template for template chooser.
 

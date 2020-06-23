@@ -1,3 +1,5 @@
+
+
 import 'package:charlesmemeeditor/util/hexcolor.dart';
 import 'package:charlesmemeeditor/imagepick.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,21 +29,46 @@ class _TemplateState extends State<Template> {
             crossAxisSpacing: 10.0,
             children: <Widget>[
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                runApp(new MyHomePage());
+               Navigator.push(
+                 context,
+                 MaterialPageRoute(
+                   builder: (context) => MyHomePage())
+               );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                runApp(new MyHomePage());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyHomePage())
+                );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                runApp(new MyHomePage());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyHomePage())
+                );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                runApp(new MyHomePage());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyHomePage())
+                );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                runApp(new MyHomePage());
-              },),  GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                runApp(new MyHomePage());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyHomePage())
+                );
+              },),
+              GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyHomePage())
+                );
               },),
             ],
 
