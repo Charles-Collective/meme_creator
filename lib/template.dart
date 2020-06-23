@@ -1,4 +1,5 @@
 import 'package:charlesmemeeditor/util/hexcolor.dart';
+import 'package:charlesmemeeditor/imagepick.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,22 +27,21 @@ class _TemplateState extends State<Template> {
             crossAxisSpacing: 10.0,
             children: <Widget>[
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                debugPrint("tapped");
+                runApp(new MyHomePage());
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                debugPrint("tapped");
+                runApp(new MyHomePage());
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                debugPrint("tapped");
+                runApp(new MyHomePage());
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                debugPrint("tapped");
+                runApp(new MyHomePage());
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                debugPrint("tapped");
-              },),
-              GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
-                debugPrint("tapped");
+                runApp(new MyHomePage());
+              },),  GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
+                runApp(new MyHomePage());
               },),
             ],
 
