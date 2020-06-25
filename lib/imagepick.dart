@@ -43,26 +43,28 @@ class _ImageCaptureState extends State<ImageCapture> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children:<Widget>[
-              new Text("\n\n\n\n\n\n\n\n\n\n\n"),
-              new Text("Upload a photo to edit", style: TextStyle(fontSize: 28),),
-              new Text("\n"),
-              Row(
-                children: <Widget>[
-                  new Text("                                  "),
-                  IconButton(
-                      icon: Icon(Icons.photo_library, size: 50,),
-                      onPressed:() {
-                        getImage(ImageSource.gallery, context);
-                      }
-                  ),
-                  new Text("          "),
-                  IconButton(
-                      icon: Icon(Icons.photo_camera, size: 50),
-                      onPressed: () {
-                        getImage(ImageSource.camera, context);
-                      }
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(top:400.0,left: 110),
+                child: Row(
+                  children: <Widget>[
+                    IconButton(
+                      alignment: Alignment.center,
+                        icon: Icon(Icons.photo_library, size: 50,),
+                        onPressed:() {
+                          getImage(ImageSource.gallery, context);
+                        }
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50.0),
+                      child: IconButton(
+                          icon: Icon(Icons.photo_camera, size: 50),
+                          onPressed: () {
+                            getImage(ImageSource.camera, context);
+                          }
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -112,12 +114,12 @@ class _ImageCaptureState extends State<ImageCapture> {
 }
 
 
-class MyHomePage extends StatefulWidget {
+class ImagePick extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _ImagePickState createState() => _ImagePickState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ImagePickState extends State<ImagePick> {
 
   @override
   Widget build(BuildContext context) {
