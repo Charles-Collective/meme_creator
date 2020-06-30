@@ -32,42 +32,42 @@ class _TemplateState extends State<Template> {
                Navigator.push(
                  context,
                  MaterialPageRoute(
-                   builder: (context) => ImagePick())
+                   builder: (context) => ImagePick(2))
                );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ImagePick())
+                        builder: (context) => ImagePick(2))
                 );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ImagePick())
+                        builder: (context) => ImagePick(2))
                 );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ImagePick())
+                        builder: (context) => ImagePick(2))
                 );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ImagePick())
+                        builder: (context) => ImagePick(2))
                 );
               },),
               GestureDetector(child: Container(child: Image.network("http://exchangedownloads.smarttech.com/public/content/86/8646d665-ae5f-46b7-b6ae-4c50368ed350/previews/small/0001.png", fit: BoxFit.cover)),onTap: (){
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ImagePick())
+                        builder: (context) => ImagePick(2))
                 );
               },),
             ],
