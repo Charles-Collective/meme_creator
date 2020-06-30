@@ -60,28 +60,34 @@ class _ImagePickState extends State<ImagePick> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: ListView(
+        //  crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             if(_image != null) ...{
               Image.file(_image, width: 400, height: 400,),
               Center(child:
                 Row(
                   children: <Widget>[
-                    IconButton(
-                      alignment: Alignment.center,
-                      icon: Icon(Icons.crop),
-                      onPressed: _cropImage,
+                    Expanded(
+                      child: IconButton(
+                        alignment: Alignment.center,
+                        icon: Icon(Icons.crop),
+                        onPressed: _cropImage,
+                      ),
                     ),
-                    IconButton(
-                      alignment: Alignment.center,
-                      icon: Icon(Icons.refresh),
-                      onPressed: _clear,
+                    Expanded(
+                      child: IconButton(
+                        alignment: Alignment.center,
+                        icon: Icon(Icons.refresh),
+                        onPressed: _clear,
+                      ),
                     ),
-                    IconButton(
-                      alignment: Alignment.center,
-                      icon: Icon(Icons.check, color: Colors.black,),
-                      onPressed: _next, //to be changed to move on to next screen/ take next photo
+                    Expanded(
+                      child: IconButton(
+                        alignment: Alignment.center,
+                        icon: Icon(Icons.check, color: Colors.black,),
+                        onPressed: _next, //to be changed to move on to next screen/ take next photo
+                      ),
                     )
                   ],
                 ),
@@ -103,7 +109,7 @@ class _ImagePickState extends State<ImagePick> {
                     Padding(
                       padding: const EdgeInsets.only(left: 50.0),
                       child: IconButton(
-                          icon: Icon(Icons.photo_camera, size: 50),
+                          icon: Expanded(child: Icon(Icons.photo_camera, size: 50)),
                           onPressed: () {
                             getImage(ImageSource.camera, context);
                           }
