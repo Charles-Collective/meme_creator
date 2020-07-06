@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'imageedit.dart';
+
+
 class ImagePick extends StatefulWidget {
 
   int numOfPics;
@@ -23,11 +26,11 @@ class _ImagePickState extends State<ImagePick> {
   File _image;
 
   getImage(ImageSource source, BuildContext context) async {
-    
+
     var picture = await ImagePicker.pickImage(source: source);
 
     numOfPics--;
-    
+
     setState(() => _image = picture );
   }
 
@@ -58,13 +61,22 @@ class _ImagePickState extends State<ImagePick> {
 
   @override
   Widget build(BuildContext context) {
+
+    if(_image != null){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Edit())
+      );
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: ListView(
         //  crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             if(_image != null) ...{
-              Image.file(_image, width: 400, height: 400,),
+              Image.file(_image, width: 400, height: 400,alignment: Alignment.center,),
               Center(child:
                 Row(
                   children: <Widget>[
@@ -93,7 +105,7 @@ class _ImagePickState extends State<ImagePick> {
                 ),
 
               )
-              
+
             },
             Padding(
                 padding: const EdgeInsets.only(top:400.0,left: 110),
