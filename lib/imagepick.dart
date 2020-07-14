@@ -73,6 +73,8 @@ class _ImagePickState extends State<ImagePick> {
       );
     }
 
+    var height = MediaQuery.of(context).size.height;
+
     return MaterialApp(
       home: Scaffold(
         body: ListView(
@@ -111,28 +113,28 @@ class _ImagePickState extends State<ImagePick> {
 
             },
             Padding(
-                padding: const EdgeInsets.only(top:400.0,left: 110),
-                child: Row(
-                  children: <Widget>[
-                    IconButton(
-                      alignment: Alignment.center,
-                        icon: Icon(Icons.photo_library, size: 50,),
-                        onPressed:() {
-                          getImage(ImageSource.gallery, context);
-                        }
+              padding: EdgeInsets.only(top:height/2,left: 110),
+              child: Row(
+                children: <Widget>[
+                  IconButton(
+                    alignment: Alignment.center,
+                    icon: Icon(Icons.photo_library, size: 50,),
+                    onPressed:() {
+                      getImage(ImageSource.gallery, context);
+                    },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50.0),
+                    child: IconButton(
+                      icon: Expanded(child: Icon(Icons.photo_camera, size: 50)),
+                      onPressed: () {
+                        getImage(ImageSource.camera, context);
+                      },
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50.0),
-                      child: IconButton(
-                          icon: Expanded(child: Icon(Icons.photo_camera, size: 50)),
-                          onPressed: () {
-                            getImage(ImageSource.camera, context);
-                          }
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+            ),
           ],
         ),
       ),

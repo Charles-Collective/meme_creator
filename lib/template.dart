@@ -13,10 +13,13 @@ class _TemplateState extends State<Template> {
 
   @override
   Widget build(BuildContext context) {
+    
+    var height = MediaQuery.of(context).size.height;
+
     return MaterialApp(
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.only(top: 150.0),
+          padding: EdgeInsets.only(top: height/15),
           child: GridView.count(
             padding: EdgeInsets.all(20.0),
             crossAxisCount: 2,
