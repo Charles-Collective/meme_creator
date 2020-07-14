@@ -19,27 +19,30 @@ class  _EditState extends State<Edit> {
   body: ListView(
   //  crossAxisAlignment: CrossAxisAlignment.center,
   children: <Widget>[
-    Image.file(global.image, width: 400, height: 400,alignment: Alignment.center,),
+    Padding(
+      padding: const EdgeInsets.only(top: 100.0),
+      child: Image.file(global.image, width: 500, height: 500,alignment: Alignment.center,),
+    ),
     Center(child:
     Row(
     children: <Widget>[
     Expanded(
     child: IconButton(
-    alignment: Alignment.center,
+    alignment: Alignment.bottomCenter,
     icon: Icon(Icons.crop),
    // onPressed: _cropImage,
     ),
     ),
     Expanded(
     child: IconButton(
-    alignment: Alignment.center,
+    alignment: Alignment.bottomCenter,
     icon: Icon(Icons.refresh),
    // onPressed: _clear,
     ),
     ),
     Expanded(
     child: IconButton(
-    alignment: Alignment.center,
+    alignment: Alignment.bottomCenter,
     icon: Icon(Icons.check, color: Colors.black,),
    // onPressed: _next, //to be changed to move on to next screen/ take next photo
     ),

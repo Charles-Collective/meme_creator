@@ -52,6 +52,7 @@ class _ImagePickState extends State<ImagePick> {
 
   void _clear() {
     setState(() => _image = null);
+    global.image = null;
   }
 
   void _next() {
