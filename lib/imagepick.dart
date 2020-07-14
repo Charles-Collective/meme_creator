@@ -7,7 +7,6 @@ import 'globals.dart' as global;
 
 import 'imageedit.dart';
 
-
 class ImagePick extends StatefulWidget {
 
   int numOfPics;

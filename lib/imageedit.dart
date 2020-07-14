@@ -8,55 +8,53 @@ import 'globals.dart' as global;
 class Edit extends StatefulWidget {
   @override
   _EditState createState() =>   _EditState();
-
 }
-
 
 class  _EditState extends State<Edit> {
   Widget build(BuildContext context) {
-  return MaterialApp(
-  home: Scaffold(
-  body: ListView(
-  //  crossAxisAlignment: CrossAxisAlignment.center,
-  children: <Widget>[
-    Padding(
-      padding: const EdgeInsets.only(top: 100.0),
-      child: Image.file(global.image, width: 600, height: 600,alignment: Alignment.center,),
-    ),
-    Center(child:
-    Row(
-      mainAxisAlignment: MainAxisAlignment.end ,
-    children: <Widget>[
-    Expanded(
-    child: IconButton(
-      padding: EdgeInsets.only(top: 100),
-    alignment: FractionalOffset.bottomCenter,
-    icon: Icon(Icons.crop),
-   // onPressed: _cropImage,
-    ),
-    ),
-    Expanded(
-    child: IconButton(
-      padding: EdgeInsets.only(top: 100),
-    alignment: FractionalOffset.bottomCenter,
-    icon: Icon(Icons.refresh),
-   // onPressed: _clear,
-    ),
-    ),
-    Expanded(
-    child: IconButton(
-      padding: EdgeInsets.only(top: 100),
-    alignment: FractionalOffset.bottomCenter,
-    icon: Icon(Icons.check, color: Colors.black,),
-   // onPressed: _next, //to be changed to move on to next screen/ take next photo
-    ),
-    )
-    ],
-    ),
-    )
-    ],
-    )
-    )
-  );
-}
+    return MaterialApp(
+      home: Scaffold(
+        body: ListView(
+          //  crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 100.0),
+              child: Image.file(global.image, width: 600, height: 600,alignment: Alignment.center,),
+            ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end ,
+                children: <Widget>[
+                  Expanded(
+                    child: IconButton( //crop button
+                      padding: EdgeInsets.only(top: 100),
+                      alignment: FractionalOffset.bottomCenter,
+                      icon: Icon(Icons.crop),
+                      //onPressed: _cropImage,
+                    ),
+                  ),
+                  Expanded(
+                    child: IconButton(
+                      padding: EdgeInsets.only(top: 100),
+                      alignment: FractionalOffset.bottomCenter,
+                      icon: Icon(Icons.refresh),
+                      //onPressed: _clear,
+                    ),
+                  ),
+                  Expanded(
+                    child: IconButton(
+                      padding: EdgeInsets.only(top: 100),
+                      alignment: FractionalOffset.bottomCenter,
+                      icon: Icon(Icons.check, color: Colors.black,),
+                      //onPressed: _next, //to be changed to move on to next screen/ take next photo
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        )
+      )
+    );
+  }
 }
