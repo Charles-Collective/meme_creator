@@ -3,6 +3,7 @@ import 'package:charlesmemeeditor/imagepick.dart';
 import 'package:charlesmemeeditor/imageedit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'globals.dart' as global;
 
 class Edit extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class  _EditState extends State<Edit> {
   body: ListView(
   //  crossAxisAlignment: CrossAxisAlignment.center,
   children: <Widget>[
-    Image.file(_image, width: 400, height: 400,alignment: Alignment.center,),
+    Image.file(global.image, width: 400, height: 400,alignment: Alignment.center,),
     Center(child:
     Row(
     children: <Widget>[

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'globals.dart' as global;
 
 import 'imageedit.dart';
 
@@ -32,6 +33,8 @@ class _ImagePickState extends State<ImagePick> {
     numOfPics--;
 
     setState(() => _image = picture );
+
+    global.image = _image;
   }
 
   Future<void> _cropImage() async {
