@@ -136,38 +136,6 @@ class _ImagePickState extends State<ImagePick> {
               ),
           ],
         ),
-        /*bottomNavigationBar: BottomAppBar(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children:<Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top:400.0,left: 110),
-                child: Row(
-                  children: <Widget>[
-                    Text("HELLo"),
-                    IconButton(
-                      alignment: Alignment.center,
-                        icon: Icon(Icons.photo_library, size: 50,),
-                        onPressed:() {
-                          getImage(ImageSource.gallery, context);
-                        }
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50.0),
-                      child: IconButton(
-                          icon: Icon(Icons.photo_camera, size: 50),
-                          onPressed: () {
-                            getImage(ImageSource.camera, context);
-                          }
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      */
       ),
     );
   }
