@@ -14,7 +14,21 @@ class Edit extends StatefulWidget {
   _EditState createState() =>   _EditState();
 }
 
+enum AppState {
+  free,
+  picked,
+  cropped,
+}
+
 class  _EditState extends State<Edit> {
+  AppState state;
+
+  @override
+  void initState() {
+    super.initState();
+    state = AppState.free;
+  }
+
   Widget build(BuildContext context) {
 
     var height = MediaQuery.of(context).size.height;
@@ -97,10 +111,18 @@ class  _EditState extends State<Edit> {
           title: 'Cropper',
         ));
     if (croppedFile != null) {
-      debugPrint("null");
       global.image = croppedFile;
-      _EditState();
-      };
+      setState(() {
+        state = AppState.cropped;
+      });
     }
   }
+  void _clearImage() {
+    global.image = null;
+    setState(() {
+      state = AppState.free;
+    });
+  }
+}
+  
 
