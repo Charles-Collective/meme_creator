@@ -59,7 +59,7 @@ class  _EditState extends State<Edit> {
                     child: IconButton(
                       padding: EdgeInsets.only(top: height/10),
                       alignment: FractionalOffset.bottomCenter,
-                      icon: Icon(Icons.refresh),
+                      icon: Icon(Icons.text_fields),
                       //onPressed: _clear,
                     ),
                   ),
@@ -124,5 +124,5 @@ class  _EditState extends State<Edit> {
     });
   }
 }
-  
+
 
