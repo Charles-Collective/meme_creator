@@ -88,8 +88,8 @@ class  _EditState extends State<Edit> {
           CropAspectRatioPreset.ratio16x9
         ],
         androidUiSettings: AndroidUiSettings(
-            toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
+            toolbarTitle: 'Crop your meme',
+            toolbarColor: Colors.grey,
             toolbarWidgetColor: Colors.white,
             initAspectRatio: CropAspectRatioPreset.original,
             lockAspectRatio: false),
@@ -98,6 +98,8 @@ class  _EditState extends State<Edit> {
         ));
     if (croppedFile != null) {
       debugPrint("null");
+      global.image = croppedFile;
+      _EditState();
       };
     }
   }
