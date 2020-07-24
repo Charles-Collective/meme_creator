@@ -32,7 +32,7 @@ class _TemplateState extends State<Template> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ImagePick(2))
+                      builder: (context) => ImagePick(2)),
                   );
                 },
               ),

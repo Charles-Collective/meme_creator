@@ -6,12 +6,20 @@ import 'package:charlesmemeeditor/imagepick.dart';
 import 'package:charlesmemeeditor/imageedit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'globals.dart' as global;
+import 'imagepick.dart';
+import 'template.dart';
 
 class Edit extends StatefulWidget {
+
+  int numOfPics;
+
+  Edit(this.numOfPics);
+
   @override
-  _EditState createState() =>   _EditState();
+  _EditState createState() =>   _EditState(numOfPics);
 }
 
 enum AppState {
@@ -22,6 +30,10 @@ enum AppState {
 
 class  _EditState extends State<Edit> {
   AppState state;
+
+  int numOfPics;
+
+  _EditState(this.numOfPics);
 
   @override
   void initState() {
@@ -51,7 +63,7 @@ class  _EditState extends State<Edit> {
                     child: IconButton( //crop button
                       padding: EdgeInsets.only(top: height/10),
                       alignment: FractionalOffset.bottomCenter,
-                      icon: Icon(Icons.crop),
+                      icon: Icon(Icons.crop, color: Colors.black),
                       onPressed: _cropImage,
                     ),
                   ),
@@ -59,7 +71,7 @@ class  _EditState extends State<Edit> {
                     child: IconButton(
                       padding: EdgeInsets.only(top: height/10),
                       alignment: FractionalOffset.bottomCenter,
-                      icon: Icon(Icons.text_fields),
+                      icon: Icon(Icons.text_fields, color: Colors.black),
                       //onPressed: _clear,
                     ),
                   ),
@@ -68,7 +80,7 @@ class  _EditState extends State<Edit> {
                       padding: EdgeInsets.only(top: height/10),
                       alignment: FractionalOffset.bottomCenter,
                       icon: Icon(Icons.check, color: Colors.black,),
-                      //onPressed: _next, //to be changed to move on to next screen/ take next photo
+                      onPressed: _next, //to be changed to move on to next screen/ take next photo
                     ),
                   )
                 ],
@@ -117,6 +129,23 @@ class  _EditState extends State<Edit> {
       });
     }
   }
+
+  void _next() {
+
+    numOfPics--;
+
+    if(numOfPics == 0){
+      //TODO move on to new page, combine images or whatever, but for now: return to template page
+      Template();
+    } else {
+      Navigator.pop(context);
+      //TODO, cannot understand the !_debugLocked assertion failure, found code on the flutter.dev site that appears
+      //TODO  to be the exact same setup of what we have here: imagepick pushes edit, edit pops and hence should go
+      //TODO  back to image pick. https://flutter.dev/docs/cookbook/navigation/navigation-basics. Cannot find the answer
+      //TODO  online for the life of me, needs a fresh set of eyes. <3 ~Seán.
+    }
+  }
+
   void _clearImage() {
     global.image = null;
     setState(() {
@@ -124,5 +153,3 @@ class  _EditState extends State<Edit> {
     });
   }
 }
-
-

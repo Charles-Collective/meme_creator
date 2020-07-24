@@ -55,63 +55,14 @@ class _ImagePickState extends State<ImagePick> {
   }
 
   void _next() {
-    if(numOfPics==0) {
-      //navigate to next page that displays the images selected
-    } else {
-      //navigate back to image picker page (camera/gallery)
-    }
+    Navigator.pop(context);
   }
 
-  @override
-  Widget build(BuildContext context) {
-
-    if(_image != null){
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => Edit())
-      );
-    }
-
-    var height = MediaQuery.of(context).size.height;
-
+  MaterialApp imagePickScreen(var height) {
     return MaterialApp(
       home: Scaffold(
         body: ListView(
-        //  crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            if(_image != null) ...{
-              Image.file(_image, width: 400, height: 400,alignment: Alignment.center,),
-              Center(child:
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: IconButton(
-                        alignment: Alignment.center,
-                        icon: Icon(Icons.crop),
-                        onPressed: _cropImage,
-                      ),
-                    ),
-                    Expanded(
-                      child: IconButton(
-                        alignment: Alignment.center,
-                        icon: Icon(Icons.refresh),
-                        onPressed: _clear,
-                      ),
-                    ),
-                    Expanded(
-                      child: IconButton(
-                        alignment: Alignment.center,
-                        icon: Icon(Icons.check, color: Colors.black,),
-                        onPressed: _next, //to be changed to move on to next screen/ take next photo
-                      ),
-                    )
-                  ],
-                ),
-
-              )
-
-            },
             Padding(
               padding: EdgeInsets.only(top:height/2,left: 110),
               child: Row(
@@ -139,5 +90,25 @@ class _ImagePickState extends State<ImagePick> {
         ),
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    var height = MediaQuery.of(context).size.height;
+
+    if(_image != null){
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Edit(numOfPics)
+        ),
+      );
+    }
+
+
+
+    return imagePickScreen(height);
+
   }
 }
