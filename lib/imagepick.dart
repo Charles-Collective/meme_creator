@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'globals.dart' as global;
@@ -8,6 +9,8 @@ import 'globals.dart' as global;
 import 'imageedit.dart';
 
 class ImagePick extends StatefulWidget {
+  
+  
 
   int numOfPics;
 
@@ -16,6 +19,8 @@ class ImagePick extends StatefulWidget {
   @override
   _ImagePickState createState() => _ImagePickState(2);
 }
+
+
 
 class _ImagePickState extends State<ImagePick> {
 
@@ -59,6 +64,18 @@ class _ImagePickState extends State<ImagePick> {
   }
 
   MaterialApp imagePickScreen(var height) {
+
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      if(_image != null){
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Edit(numOfPics)
+          ),
+        );
+      }
+    });
+
     return MaterialApp(
       home: Scaffold(
         body: ListView(
@@ -70,17 +87,13 @@ class _ImagePickState extends State<ImagePick> {
                   IconButton(
                     alignment: Alignment.center,
                     icon: Icon(Icons.photo_library, size: 50,),
-                    onPressed:() {
-                      getImage(ImageSource.gallery, context);
-                    },
+                    onPressed:() => getImage(ImageSource.gallery, context)
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 50.0),
                       child: IconButton(
                         icon: Icon(Icons.photo_camera, size:50,),
-                        onPressed: () {
-                          getImage(ImageSource.camera, context);
-                        },
+                        onPressed: () => getImage(ImageSource.camera, context)
                       ),
                     ),
               ],
@@ -95,18 +108,15 @@ class _ImagePickState extends State<ImagePick> {
   @override
   Widget build(BuildContext context) {
 
+    setState(() {
+
+    });
     var height = MediaQuery.of(context).size.height;
 
-    if(_image != null){
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => Edit(numOfPics)
-        ),
-      );
-    }
 
     return imagePickScreen(height);
+
+
 
   }
 }
