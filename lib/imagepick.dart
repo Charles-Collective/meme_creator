@@ -106,8 +106,6 @@ class _ImagePickState extends State<ImagePick> {
       );
     }
 
-
-
     return imagePickScreen(height);
 
   }
