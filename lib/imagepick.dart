@@ -76,18 +76,18 @@ class _ImagePickState extends State<ImagePick> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 50.0),
-                    child: IconButton(
-                      icon: Expanded(child: Icon(Icons.photo_camera, size: 50)),
-                      onPressed: () {
-                        getImage(ImageSource.camera, context);
-                      },
+                      child: IconButton(
+                        icon: Icon(Icons.photo_camera, size:50,),
+                        onPressed: () {
+                          getImage(ImageSource.camera, context);
+                        },
+                      ),
                     ),
+              ],
                   ),
+            ),
                 ],
               ),
-            ),
-          ],
-        ),
       ),
     );
   }
