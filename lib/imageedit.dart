@@ -11,6 +11,8 @@ import 'package:image_cropper/image_cropper.dart';
 import 'globals.dart' as global;
 import 'imagepick.dart';
 import 'template.dart';
+import 'package:image_editor_pro/image_editor_pro.dart';
+
 
 class Edit extends StatefulWidget {
 
@@ -72,7 +74,7 @@ class  _EditState extends State<Edit> {
                       padding: EdgeInsets.only(top: height/10),
                       alignment: FractionalOffset.bottomCenter,
                       icon: Icon(Icons.text_fields, color: Colors.black),
-                      //onPressed: _clear,
+                      onPressed: getimageditor,
                     ),
                   ),
                   Expanded(
@@ -128,6 +130,24 @@ class  _EditState extends State<Edit> {
         state = AppState.cropped;
       });
     }
+  }
+
+  Future<void> getimageditor()  {
+    final geteditimage =   Navigator.push(context, MaterialPageRoute(
+        builder: (context){
+          return ImageEditorPro(
+            appBarColor: Colors.blue,
+            bottomBarColor: Colors.blue,
+          );
+        }
+    )).then((geteditimage){
+      if(geteditimage != null){
+        setState(() {
+          global.image =  geteditimage;
+        });
+      }
+    }).catchError((er){print(er);});
+
   }
 
   void _next() {
