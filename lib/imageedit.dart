@@ -133,17 +133,20 @@ class  _EditState extends State<Edit> {
   }
 
   Future<void> getimageditor()  {
+
+    File _image = global.image;
+
     final geteditimage =   Navigator.push(context, MaterialPageRoute(
         builder: (context){
           return ImageEditorPro(
-            appBarColor: Colors.blue,
-            bottomBarColor: Colors.blue,
+            appBarColor: Colors.orange,
+            bottomBarColor: Colors.orange,
           );
         }
     )).then((geteditimage){
       if(geteditimage != null){
         setState(() {
-          global.image =  geteditimage;
+          _image =  geteditimage;
         });
       }
     }).catchError((er){print(er);});
@@ -164,10 +167,6 @@ class  _EditState extends State<Edit> {
       );
     } else {
       Navigator.pop(context);
-      //TODO, cannot understand the !_debugLocked assertion failure, found code on the flutter.dev site that appears
-      //TODO  to be the exact same setup of what we have here: imagepick pushes edit, edit pops and hence should go
-      //TODO  back to image pick. https://flutter.dev/docs/cookbook/navigation/navigation-basics.Cannot find the answer
-      //TODO  online for the life of me, needs a fresh set of eyes. <3 ~Seán.
     }
   }
 
